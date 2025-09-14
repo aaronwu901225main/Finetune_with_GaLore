@@ -12,7 +12,7 @@ update_proj_gap = 200
 scale = 2
 num_training_steps = 1000
 warmup_steps = 50
-batch_size = 2
+batch_size = 1
 max_seq_length = 512
 
 modelpath = "Salesforce/Llama-xLAM-2-8b-fc-r"
