@@ -4,6 +4,7 @@ from datasets import load_dataset
 from transformers import AutoTokenizer, AutoModelForCausalLM, set_seed
 from galore_torch import GaLoreAdamW8bit
 from trl import setup_chat_format
+from tqdm import tqdm
 
 # ========= 超參數 =========
 lr = 1e-5
@@ -106,7 +107,7 @@ model.train()
 os.makedirs(save_dir, exist_ok=True)
 
 for epoch in range(3):  # 多跑幾個 epoch
-    for batch in dataloader:
+    for batch in tqdm(dataloader, desc=f"Epoch {epoch + 1}"):
         global_step += 1
         loss = model(**batch).loss
         loss.backward()
