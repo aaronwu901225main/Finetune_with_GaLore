@@ -14,7 +14,7 @@ scale = 2
 num_training_steps = 1000
 warmup_steps = 50
 batch_size = 1
-max_seq_length = 512
+max_seq_length = 256
 
 modelpath = "Salesforce/Llama-xLAM-2-8b-fc-r"
 run_id = f"galore-{str(uuid.uuid4())}"
